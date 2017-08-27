@@ -13,6 +13,11 @@ set clipboard+=unnamedplus
 set expandtab
 filetype indent on
 set backspace=indent,eol,start
+if (has("autocmd") && !has("gui_running"))
+  let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
+  autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " No `bg` setting
+end
+colorscheme onedark
 
 let g:nerdtree_tabs_autofind=1
 let g:NERDTreeShowHidden=1
@@ -103,6 +108,8 @@ if (empty($TMUX))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   endif
   if (has("termguicolors"))
+    set t_8f=\[[38;2;%lu;%lu;%lum
+    set t_8b=\[[48;2;%lu;%lu;%lum
     set termguicolors
   endif
 endif

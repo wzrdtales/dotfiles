@@ -77,6 +77,7 @@ Plug 'nlknguyen/papercolor-theme'
 Plug 'joshdick/onedark.vim'
 Plug 'endel/vim-github-colorscheme'
 Plug 'rakr/vim-one'
+Plug 'tomasr/molokai'
 
 " Session
 
