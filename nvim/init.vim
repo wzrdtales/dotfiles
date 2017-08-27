@@ -89,6 +89,10 @@ Plug 'xolox/vim-session'
 Plug 'sjl/gundo.vim'
 Plug 'vim-scripts/YankRing.vim'
 
+" Formatter
+
+Plug 'sbdchd/neoformat', { 'do': 'npm install -g prettier prettier-eslint-cli' } 
+
 " webdevicons must be loaded last
 Plug 'ryanoasis/vim-devicons'
 

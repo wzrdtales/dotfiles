@@ -121,7 +121,14 @@ let g:session_autosave_periodic = 5
 let g:session_autoload = 'yes'
 
 
+" Formatter
 
+let g:neoformat_enabled_javascript = [ 'prettiereslintr' ]
+let g:neoformat_enabled_json = [ 'prettier' ]
+augroup fmt
+ autocmd!
+ autocmd BufWritePre * undojoin | Neoformat
+augroup END
 
 
 

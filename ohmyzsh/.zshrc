@@ -97,5 +97,6 @@ export PATH=/home/tobi/.gem/ruby/2.3.0/bin:$PATH
 source /etc/profile.d/perlbin.sh
 PATH="/home/tobi/.gem/ruby/2.4.0/bin:$PATH"
 alias vim=nvim
+export TMPDIR=/tmp
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
