@@ -2,7 +2,7 @@
 
 printf "Installing necessary software and dependencies"
 
-sudo pacman -Sy --noconfirm curl wget unzip
+sudo pacman -Sy --noconfirm curl wget unzip python python3 python-pip xsel
 
 if [ ! -f ~/.local/share/fonts/Sauce\ Code\ Pro\ Nerd\ Font\ Complete.ttf ]; then
   printf "${BLUE}Downloading Sauce Code Pro Nerd Fonts to ~/.local/share/fonts folder...${NORMAL}\n"
