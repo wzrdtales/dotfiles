@@ -23,6 +23,8 @@ sudo pacman -S --noconfirm python{,2}-{neovim,pip} neovim the_silver_searcher gi
 printf "Installing oh my zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+export ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+
 printf "Adding plugins to zsh"
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
@@ -30,7 +32,7 @@ printf "Adding python dependencies"
 pip2 install yamllint
 
 printf "Add neovim plugin manager"
-yaourt -S aur/neovim-plug --noconfirm
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 printf "Setup config"
 cp ohmyzsh/.zshrc $HOME/.zshrc
