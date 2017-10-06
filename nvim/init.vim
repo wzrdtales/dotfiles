@@ -27,7 +27,7 @@ Plug 'ervandew/supertab'
 
 " git integration
 Plug 'tpope/vim-fugitive'
-Plug 'idanarye/vim-merginal'
+Plug 'idanarye/vim-merginal', { 'branch': 'develop' }
 Plug 'airblade/vim-gitgutter'
 Plug 'gregsexton/gitv'
 Plug 'xuyuanp/nerdtree-git-plugin'
@@ -96,6 +96,8 @@ Plug 'sbdchd/neoformat', { 'do': 'npm install -g prettier prettier-eslint-cli' }
 " webdevicons must be loaded last
 Plug 'ryanoasis/vim-devicons'
 
+" Auto Matching
+Plug 'jiangmiao/auto-pairs'
 
 " Initialize plugin system
 call plug#end()

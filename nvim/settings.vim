@@ -123,7 +123,7 @@ let g:session_autoload = 'yes'
 
 " Formatter
 
-let g:neoformat_enabled_javascript = [ 'prettiereslintr' ]
+let g:neoformat_enabled_javascript = [ 'prettiereslint' ]
 let g:neoformat_enabled_json = [ 'prettier' ]
 augroup fmt
  autocmd!
