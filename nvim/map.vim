@@ -6,6 +6,10 @@ map <F5> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader><leader>f :NERDTreeFind<CR>
 
+" toggle poslist
+
+nnoremap <leader>t :lclose<CR>
+
 command! Cnext try | cnext | catch | cfirst | catch | endtry
 command! Cprev try | cprev | catch | clast | catch | endtry
 command! Lnext try | lnext | catch | lfirst | catch | endtry

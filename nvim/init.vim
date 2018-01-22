@@ -40,6 +40,10 @@ Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
 Plug 'heavenshell/vim-jsdoc'
 
+" C
+
+Plug 'tweekmonster/deoplete-clang2', { 'for': ['c', 'cpp'] }
+
 " snippets
 
 Plug 'SirVer/ultisnips'

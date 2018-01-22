@@ -15,7 +15,9 @@ filetype indent on
 set backspace=indent,eol,start
 if (has("autocmd") && !has("gui_running"))
   let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
-  autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " No `bg` setting
+  highlight default link CompletePlaceHolder Comment
+	highlight default link CompletePlaceHolderEnds Comment
+    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " No `bg` setting
 end
 colorscheme onedark
 
@@ -38,10 +40,13 @@ let g:airline#extensions#branch#format = 1
 let g:leaderGuide_max_size = 20
 
 let g:ale_fixers = {}
+let g:ale_fixers.javascript = ['eslint']
 au BufNewFile,BufRead Jenkinsfile setf groovy
 
 " Neomake check after open and write
 autocmd! BufWritePost,BufEnter * silent! Neomake
+
+let g:neomake_open_list = 2
 
 cabbrev gitv Gitv
 let g:Gitv_OpenHorizontal = 1
@@ -93,6 +98,10 @@ let g:esearch = {
 " YAML
 
 let g:neomake_yaml_enabled_makers = ['yamllint']
+
+" C
+
+let g:neomake_c_enabled_makers = ['gcc', 'clang']
 
 " undo settings
 
@@ -162,3 +171,9 @@ let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+
+
+" User space functionality
+
+set exrc
+set secure
