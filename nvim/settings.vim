@@ -30,6 +30,10 @@ set completeopt-=preview
 " SuperTab go from top to bottom
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
+" Emmet settings
+
+let g:user_emmet_leader_key='<C-Z>'
+
 " Airline settings
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -73,6 +77,8 @@ set nofoldenable
 " snippet
 
 let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 
 " Search
 

@@ -13,7 +13,13 @@ Plug 'neomake/neomake'
 " Theme
 Plug 'iCyMind/NeoSolarized'
 
+
 " Syntax
+" GraphQL
+
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'statico/vim-javascript-sql', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'jparise/vim-graphql'
 Plug 'sheerun/vim-polyglot'
 
 " Display keymap
@@ -103,10 +109,9 @@ Plug 'ryanoasis/vim-devicons'
 " Auto Matching
 Plug 'jiangmiao/auto-pairs'
 
+
 " Initialize plugin system
 call plug#end()
 
 source ~/.config/nvim/settings.vim
 source ~/.config/nvim/map.vim
-
-

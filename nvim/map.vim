@@ -26,7 +26,7 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>T :enew<cr>
 nnoremap gy :bnext<CR>
 nnoremap gt :bprevious<cr>
-nnoremap gd :bdelete<cr>
+nnoremap gm :bdelete<cr>
 nnoremap <leader>q :q<CR>
 
 " Press Enter on completion does a new line
@@ -54,7 +54,7 @@ vnoremap <silent> <leader> :<c-u>LeaderGuideVisual ','<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gpl :Gpull<CR>
 nnoremap <leader>gps :Gpush<CR>
-nnoremap <leader>gc :Gcommit -v -q<CR>
+nnoremap <leader>gc :Gcommit -sv -q<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gbl :Gblame<CR>
 nnoremap <leader>gb :Git branch<Space>
@@ -102,3 +102,10 @@ nnoremap <Leader>[ ciw[]<Esc>P
 "inoremap { {<CR>}<Esc>ko
 "inoremap [ []<Esc>ha
 
+" Replacing
+
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
