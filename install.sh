@@ -35,10 +35,9 @@ export ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 
 printf "Adding plugins to zsh"
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-mkdir $ZSH_CUSTOM/plugins/nvmng
-wget https://github.com/wzrdtales/oh-my-zsh/blob/17391759ab4c6eb1e75c8648c4fdaf1a7be1bc1d/plugins/nvmng/nvmng.plugin.zsh -P $ZSH_CUSTOM/plugins/nvmng
-wget https://github.com/wzrdtales/oh-my-zsh/blob/17391759ab4c6eb1e75c8648c4fdaf1a7be1bc1d/plugins/nvmng/README.md -P $ZSH_CUSTOM/plugins/nvmng/
-wget https://github.com/wzrdtales/oh-my-zsh/blob/17391759ab4c6eb1e75c8648c4fdaf1a7be1bc1d/plugins/nvmng/_nvm -P $ZSH_CUSTOM/plugins/nvmng
+curl -fLo "${ZSH_CUSTOM}/plugins/nvmng/nvmng.plugin.zsh" https://raw.githubusercontent.com/wzrdtales/oh-my-zsh/nvmng-plugin/plugins/nvmng/nvmng.plugin.zsh --create-dirs
+curl -fLo "${ZSH_CUSTOM}/plugins/nvmng/README.md" https://raw.githubusercontent.com/wzrdtales/oh-my-zsh/nvmng-plugin/plugins/nvmng/README.md --create-dirs
+curl -fLo "${ZSH_CUSTOM}/plugins/nvmng/_nvm" https://raw.githubusercontent.com/wzrdtales/oh-my-zsh/nvmng-plugin/plugins/nvmng/_nvm --create-dirs
 
 printf "Adding python dependencies"
 pip2 install yamllint
