@@ -1,0 +1,21 @@
+    <layout>
+      <configItem>
+        <name>depro</name>
+        <shortDescription>depro</shortDescription>
+        <description>Germanpro</description>
+      </configItem>
+      <variantList>
+        <variant>
+          <configItem>
+            <name>nodeadkeys</name>
+            <description>German (no dead keys)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>nodeadkeyspro</name>
+            <description>German (no dead keys, but for programmers)</description>
+          </configItem>
+        </variant>
+      </variantList>
+    </layout>

@@ -1,0 +1,74 @@
+// based on a keyboard map from an 'xkb/symbols/de' file
+
+default
+xkb_symbols "basic" {
+
+    include "latin(type4)"
+
+    name[Group1]="German";
+
+    key <AE02>	{ [         2,   quotedbl,  twosuperior,    oneeighth ]	};
+    key <AE03>	{ [         3,    section, threesuperior,    sterling ]	};
+    key <AE04>	{ [         4,     dollar,   onequarter,     currency ]	};
+
+    key <AE11> {type[Group1]="FOUR_LEVEL_PLUS_LOCK",  symbols[Group1]=
+                  [ssharp, question, backslash, questiondown, 0x1001E9E ]};
+    key <AE12>	{ [dead_acute, dead_grave, dead_cedilla,  dead_ogonek ]	};
+
+    key <AD03>	{ [         e,          E,     EuroSign,     EuroSign ]	};
+    key <AD06>	{ [         z,          Z,    leftarrow,          yen ]	};
+    key <AD11>	{ [udiaeresis, Udiaeresis, dead_diaeresis, dead_abovering ] };
+    key <AD12>	{ [      plus,   asterisk,   asciitilde,  macron ]	};
+
+    key <AC02>  { [         s,          S,                U017F,     U1E9E    ] };
+    key <AC07>  { [         j,          J,        dead_belowdot, dead_abovedot   ] };
+    key <AC10>	{ [odiaeresis, Odiaeresis, dead_doubleacute, dead_belowdot ] };
+    key <AC11>	{ [adiaeresis, Adiaeresis, dead_circumflex, dead_caron ] };
+    key <TLDE>	{ [dead_circumflex, degree,	U2032,    U2033	] };
+
+    key <BKSL>	{ [numbersign, apostrophe, rightsinglequotemark,   dead_breve ]	};
+    key <AB01>	{ [         y,          Y,       guillemotright,    U203A 	] };
+    key <AB02>	{ [         x,          X,        guillemotleft,    U2039 	] };
+    key <AB04>	{ [         v,          V,   doublelowquotemark, singlelowquotemark ]	};
+    key <AB05>	{ [         b,          B,  leftdoublequotemark, leftsinglequotemark ] };
+    key <AB06>	{ [         n,          N, rightdoublequotemark, rightsinglequotemark ]	};
+    key <AB08>  { [     comma,  semicolon,       periodcentered,     multiply	] };
+    key <AB09>	{ [    period,      colon,                U2026,     division 	] };
+    key <AB10>	{ [     minus, underscore,               endash,     emdash	] };
+    key <LSGT>	{ [     less,     greater,                  bar, dead_belowmacron ] };
+
+    include "kpdl(comma)"
+
+    include "level3(ralt_switch)"
+};
+
+partial alphanumeric_keys
+xkb_symbols "nodeadkeys" {
+
+    // modify the basic German layout to not have any dead keys
+
+    include "depro(basic)"
+    name[Group1]="German (no dead keys)";
+
+    key <TLDE>	{ [asciicircum,     degree,              notsign,     notsign ]	};
+    key <AE12>	{ [      acute,      grave,              cedilla,     cedilla ]	};
+    key <AD11>	{ [ udiaeresis, Udiaeresis,            diaeresis,   diaeresis ]	};
+    key <AD12>	{ [       plus,   asterisk,           asciitilde,      macron ]	};
+    key <AC10>	{ [ odiaeresis, Odiaeresis,          doubleacute, doubleacute ]	};
+    key <AC11>	{ [ adiaeresis, Adiaeresis,          asciicircum, asciicircum ]	};
+    key <BKSL>	{ [ numbersign, apostrophe, rightsinglequotemark,       grave ]	};
+};
+
+partial alphanumeric_keys
+xkb_symbols "nodeadkeyspro" {
+
+    // modify the basic German layout to not have any dead keys
+
+    include "depro(nodeadkeys)"
+    name[Group1]="German (no dead keys, for programmers)";
+
+    key <AC10>	{ [braceleft, bracketleft]};
+    key <AC11>	{ [braceright, bracketright]};
+    key <AD11>	{ [backslash] };
+};
+

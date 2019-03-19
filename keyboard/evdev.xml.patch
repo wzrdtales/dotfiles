@@ -1,0 +1,30 @@
+--- evdev.xml	2019-03-19 17:09:18.741971877 +0100
++++ /usr/share/X11/xkb/rules/evdev.xml	2019-03-19 17:02:44.148266728 +0100
+@@ -3428,6 +3428,27 @@
+     </layout>
+     <layout>
+       <configItem>
++        <name>depro</name>
++        <shortDescription>depro</shortDescription>
++        <description>Germanpro</description>
++      </configItem>
++      <variantList>
++        <variant>
++          <configItem>
++            <name>nodeadkeys</name>
++            <description>German (no dead keys)</description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>nodeadkeyspro</name>
++            <description>German (no dead keys, but for programmers)</description>
++          </configItem>
++        </variant>
++      </variantList>
++    </layout>
++    <layout>
++      <configItem>
+         <name>de</name>
+         
+         <shortDescription>de</shortDescription>

@@ -1,0 +1,10 @@
+--- evdev.lst	2019-03-19 17:06:02.113759987 +0100
++++ /usr/share/X11/xkb/rules/evdev.lst	2019-03-19 16:55:50.653346837 +0100
+@@ -229,6 +229,7 @@
+   gn              French (Guinea)
+   ge              Georgian
+   de              German
++  depro           Germanpro
+   gr              Greek
+   hu              Hungarian
+   is              Icelandic
