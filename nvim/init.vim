@@ -48,7 +48,7 @@ Plug 'heavenshell/vim-jsdoc'
 
 " C
 
-Plug 'tweekmonster/deoplete-clang2', { 'for': ['c', 'cpp'] }
+Plug 'Shougo/deoplete-clangx', { 'for': ['c', 'cpp'] }
 
 " snippets
 
