@@ -6,13 +6,22 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete-lsp'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neomake/neomake'
+Plug 'neovim/nvim-lsp'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
 
 " Theme
 Plug 'iCyMind/NeoSolarized'
 
+
+" Debugging
+
+Plug 'vim-vdebug/vdebug', { 'for': ['php', 'python', 'ruby', 'perl'] }
 
 " Syntax
 " GraphQL
@@ -65,6 +74,7 @@ Plug 'taiansu/nerdtree-ag'
 Plug 'eugen0329/vim-esearch'
 Plug 'https://github.com/will133/vim-dirdiff.git'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " web
 
@@ -110,8 +120,17 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'jiangmiao/auto-pairs'
 
 
+" Macro management
+Plug 'vim-scripts/marvim'
+
+
 " Initialize plugin system
 call plug#end()
+
+:lua << EOF
+  require'nvim_lsp'.tsserver.setup{}
+EOF
+
 
 source ~/.config/nvim/settings.vim
 source ~/.config/nvim/map.vim

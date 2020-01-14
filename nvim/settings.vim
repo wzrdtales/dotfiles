@@ -33,7 +33,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " Emmet settings
 
 let g:user_emmet_leader_key='<C-Z>'
-
+let g:neoformat_enabled_yaml = ['prettier']
 " Airline settings
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -100,6 +100,7 @@ let g:esearch = {
   \ 'use':        ['visual', 'hlsearch', 'last'],
   \}
 
+let g:esearch#out#win#open = 'enew'
 
 " YAML
 
@@ -178,6 +179,39 @@ let g:webdevicons_enable_airline_statusline = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 
+" ack settings
+
+let g:ackprg = 'rg --vimgrep --no-heading'
+let g:grepprg='rg --vimgrep'
+let g:rg_find_command = 'rg --files --follow  -g "!{.config,etc,node_modules,.git,target}/*"'
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#files('.', {'source': g:rg_find_command}, 0) 
+
+" FZF config
+
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
+function! FloatingFZF() " Floating FZF Windows
+  let buf = nvim_create_buf(v:false, v:true)
+  call setbufvar(buf, '&signcolumn', 'no')
+
+  let height = float2nr(&lines - (&lines * 2 / 10))
+  let row = float2nr((&lines - height) / 2)
+  let width = float2nr(&columns - (&columns * 2 / 10))
+  let col = float2nr((&columns - width) / 2)
+
+  let opts = {
+        \ 'relative': 'editor',
+        \ 'row': row,
+        \ 'col': col,
+        \ 'width': width,
+        \ 'height': height
+        \ }
+
+  let win = nvim_open_win(buf, v:true, opts)
+  call setwinvar(win, '&number', 0)
+  setlocal signcolumn=no
+endfunction
 
 " User space functionality
 

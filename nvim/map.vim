@@ -1,7 +1,8 @@
 "Map
 
 " Change background
-map <F5> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+nnoremap <F5> :GundoToggle<CR>
+" map <F5> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 " NERDTree settings
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader><leader>f :NERDTreeFind<CR>
@@ -27,7 +28,13 @@ nnoremap <leader>T :enew<cr>
 nnoremap gy :bnext<CR>
 nnoremap gt :bprevious<cr>
 nnoremap gm :bdelete<cr>
-nnoremap <leader>q :q<CR>
+nnoremap <leader>q :qa!<CR>
+nnoremap g} g<C-]>
+nnoremap gd :lua vim.lsp.buf.definition()<CR>
+nnoremap gl :e#
+nnoremap g# :e#<CR>
+
+nnoremap K :lua vim.lsp.buf.hover()<CR>
 
 " Press Enter on completion does a new line
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -84,10 +91,10 @@ inoremap <expr> <C-Space> deoplete#manual_complete()
 
 " Search
 
-nnoremap <leader>P :CtrlP<cr>
-nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <leader>P :Find<cr>
+nnoremap <leader>bb :Buffers<cr>
 nnoremap <leader>o :CtrlPCmdPalette<cr>
-nnoremap <leader>p :FZF<cr>
+nnoremap <leader>p :Rg<cr>
 " Start esearch prompt autofilled with one of g:esearch.use initial patterns
 call esearch#map('<leader>ee', 'esearch')
 " Start esearch autofilled with a word under the cursor
@@ -109,6 +116,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 
 " sudo
 
