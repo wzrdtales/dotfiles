@@ -90,10 +90,10 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-let g:far#source = 'agnvim'
+let g:far#source = 'rgnvim'
 let g:webdevicons_enable_ctrlp = 1
 let g:esearch = {
-  \ 'adapter':    'ag',
+  \ 'adapter':    'rg',
   \ 'backend':    'nvim',
   \ 'out':        'win',
   \ 'batch_size': 1000,
