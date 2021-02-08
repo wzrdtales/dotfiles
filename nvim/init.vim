@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete-lsp'
+ Plug 'Shougo/deoplete-lsp'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neomake/neomake'
@@ -30,10 +30,10 @@ Plug 'vim-vdebug/vdebug', { 'for': ['php', 'python', 'ruby', 'perl'] }
 " Syntax
 " GraphQL
 
+Plug 'sheerun/vim-polyglot', { 'commit' : 'e521ba3ae205b2c79df9030a3db767405caf0457' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'statico/vim-javascript-sql', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'jparise/vim-graphql'
-Plug 'sheerun/vim-polyglot'
 
 " Display keymap
 Plug 'hecal3/vim-leader-guide'
@@ -133,21 +133,15 @@ Plug 'vim-scripts/marvim'
 call plug#end()
 
 :lua << EOF
-  local skeleton = require 'nvim_lsp/configs'
-  local util = require 'nvim_lsp/util'
+  local skeleton = require 'lspconfig/configs'
+  local util = require 'lspconfig/util'
   local lsp = vim.lsp
 
   local server_name = "jsserver"
   local bin_name = "javascript-typescript-stdio"
 
-  local installer = util.npm_installer {
-    server_name = server_name;
-    packages = { "javascript-typescript-langserver" };
-    binaries = {bin_name};
-  }
-
   skeleton[server_name] = {
-    default_config = util.utf8_config {
+    default_config = {
       cmd = {bin_name};
       filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"};
       root_dir = util.root_pattern("package.json");
@@ -155,15 +149,7 @@ call plug#end()
       settings = {};
     };
     on_new_config = function(new_config)
-      local install_info = installer.info()
-      if install_info.is_installed then
-        if type(new_config.cmd) == 'table' then
-          -- Try to preserve any additional args from upstream changes.
-          new_config.cmd[1] = install_info.binaries[bin_name]
-        else
-          new_config.cmd = {install_info.binaries[bin_name]}
-        end
-      end
+      new_config.cmd = {bin_name}
     end;
     docs = {
       description = [[
@@ -181,15 +167,15 @@ call plug#end()
     };
   }
 
-  skeleton[server_name].install = installer.install
-  skeleton[server_name].install_info = installer.info
 EOF
 
 :lua << EOF
-  require'nvim_lsp'.tsserver.setup{}
+  require'lspconfig'.tsserver.setup{}
+  require'lspconfig'.clangd.setup{}
 EOF
-" require'nvim_lsp'.tsserver.setup{}
+" require'lspconfig'.tsserver.setup{}
 
+call deoplete#custom#option('num_processes', 4)
 
 source ~/.config/nvim/settings.vim
 source ~/.config/nvim/map.vim
