@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neomake/neomake'
 Plug 'neovim/nvim-lsp'
+Plug 'Shougo/echodoc.vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
@@ -138,18 +139,18 @@ call plug#end()
   local lsp = vim.lsp
 
   local server_name = "jsserver"
-  local bin_name = "javascript-typescript-stdio"
+  local bin_name = "typescript-language-server"
 
   skeleton[server_name] = {
     default_config = {
-      cmd = {bin_name};
+      cmd = {bin_name,  "--stdio"};
       filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"};
       root_dir = util.root_pattern("package.json");
       log_level = lsp.protocol.MessageType.Warning;
       settings = {};
     };
     on_new_config = function(new_config)
-      new_config.cmd = {bin_name}
+      new_config.cmd = {bin_name, "--stdio"}
     end;
     docs = {
       description = [[
@@ -169,8 +170,9 @@ call plug#end()
 
 EOF
 
-:lua << EOF
+lua << EOF
   require'lspconfig'.tsserver.setup{}
+  require'lspconfig'.dockerls.setup{}
   require'lspconfig'.clangd.setup{}
 EOF
 " require'lspconfig'.tsserver.setup{}
