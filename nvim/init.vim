@@ -15,6 +15,10 @@ Plug 'Shougo/echodoc.vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
+" Folding Optimization needed for auto format
+Plug 'Konfekt/FastFold'
+
+
 " Markdown
 
 Plug 'junegunn/goyo.vim'

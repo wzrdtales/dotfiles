@@ -96,9 +96,12 @@ nnoremap <leader>bb :Buffers<cr>
 nnoremap <leader>o :CtrlPCmdPalette<cr>
 nnoremap <leader>p :Rg<cr>
 " Start esearch prompt autofilled with one of g:esearch.use initial patterns
-call esearch#map('<leader>ee', 'esearch')
+" call esearch#map('<leader>ee', 'esearch')
+nmap <leader>ee <plug>(esearch)
 " Start esearch autofilled with a word under the cursor
-call esearch#map('<leader>ew', 'esearch-word-under-cursor')
+" call esearch#map('<leader>ew', 'esearch-word-under-cursor')
+map  <leader>eo      <plug>(operator-esearch-prefill)
+nmap <leader>ew <leader>eoiw
 
 
 nnoremap <Leader>" ciw""<Esc>P
