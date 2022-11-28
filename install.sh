@@ -16,7 +16,7 @@ fi
 sudo pacman -S --noconfirm python-{neovim,pip} neovim the_silver_searcher git zsh powerline{,-{common,fonts}} ripgrep jq tmux
 
 printf "Installing oh my zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended"
 
 printf "Add nvm ng"
 curl -o- https://raw.githubusercontent.com/wzrdtales/nvm-ng/v0.40.0/install.sh | bash
