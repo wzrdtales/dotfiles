@@ -50,3 +50,5 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs     https://r
 
 nvim --headless +'echoerr 1' +'PlugInstall --sync' +qa
 nvim +UpdateRemotePlugins +qa
+
+printf "Success, please close and start your console again!"
