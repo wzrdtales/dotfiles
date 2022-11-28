@@ -14,6 +14,7 @@ curl -o- https://raw.githubusercontent.com/wzrdtales/nvm-ng/v0.40.0/install.sh |
 [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --fast-reuse
 
 nvm install 14
+npm i -g pnpm prettier prettier-eslint-cli
 
 printf "Setup config"
 cp ohmyzsh/.zshrc $HOME/.zshrc
