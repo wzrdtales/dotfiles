@@ -14,6 +14,7 @@ curl -o- https://raw.githubusercontent.com/wzrdtales/nvm-ng/v0.40.0/install.sh |
 [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --fast-reuse
 
 nvm install 14
+export PNPM_HOME="/home/tobi/.local/share/pnpm"
 npm i -g pnpm prettier prettier-eslint-cli
 pnpm i -g db-migrate neovim node-extension @seneca/repl eslint eslint_d conventional-changelog-cli aurelia-cli pino-pretty pdf2json nuxt typescript typescript-language-server fuge gitlab-time-tracker javascript-typescript-langserver markdown-pdf
 
