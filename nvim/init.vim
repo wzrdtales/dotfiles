@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
- Plug 'Shougo/deoplete-lsp'
+Plug 'Shougo/deoplete-lsp'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neomake/neomake'
@@ -35,7 +35,8 @@ Plug 'vim-vdebug/vdebug', { 'for': ['php', 'python', 'ruby', 'perl'] }
 " Syntax
 " GraphQL
 
-Plug 'sheerun/vim-polyglot', { 'commit' : 'e521ba3ae205b2c79df9030a3db767405caf0457' }
+" Plug 'sheerun/vim-polyglot', { 'commit' : 'e521ba3ae205b2c79df9030a3db767405caf0457' }
+Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'statico/vim-javascript-sql', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'jparise/vim-graphql'
@@ -90,7 +91,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
-Plug 'jaxbot/browserlink.vim'
+" Plug 'jaxbot/browserlink.vim'
 
 " vim
 

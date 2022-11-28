@@ -51,7 +51,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvmng fasd archlinux tmux zsh-autosuggestions docker jira jsontools node npm systemd zsh-completions)
+plugins=(git nvmng fasd archlinux tmux zsh-autosuggestions docker jira jsontools node npm systemd)
 
 # User configuration
 
@@ -94,9 +94,16 @@ export PATH=$PATH:$GOPATH/bin
 alias pacman='sudo pacman'
 alias systemctl='sudo systemctl'
 export PATH=/home/tobi/.gem/ruby/2.3.0/bin:$PATH
-source /etc/profile.d/perlbin.sh
+# source /etc/profile.d/perlbin.sh
 PATH="/home/tobi/.gem/ruby/2.4.0/bin:$PATH"
 alias vim=nvim
 export TMPDIR=/tmp
+unlocktpm() { ssh-add -s /usr/lib/pkcs11/libtpm2_pkcs11.so }
+
+export PATH="${PATH}:${HOME}/.krew/bin"
+
+# pnpm
+export PNPM_HOME="/home/tobi/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

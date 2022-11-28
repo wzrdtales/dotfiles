@@ -47,6 +47,10 @@ let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['eslint']
 au BufNewFile,BufRead Jenkinsfile setf groovy
 
+" SQL dialect
+
+let g:javascript_sql_dialect = 'pgsql'
+
 " Neomake check after open and write
 autocmd! BufWritePost,BufEnter * silent! Neomake
 
@@ -148,7 +152,7 @@ let g:neoformat_enabled_javascript = [ 'prettierd', 'eslint_d' ]
 let g:neoformat_enabled_json = [ 'prettier' ]
 augroup fmt
  autocmd!
- autocmd BufWritePre * undojoin | Neoformat
+ autocmd BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | endtry
 augroup END
 
 
