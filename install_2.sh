@@ -15,6 +15,7 @@ curl -o- https://raw.githubusercontent.com/wzrdtales/nvm-ng/v0.40.0/install.sh |
 
 nvm install 14
 npm i -g pnpm prettier prettier-eslint-cli
+pnpm i -g db-migrate neovim node-extension @seneca/repl eslint eslint_d conventional-changelog-cli aurelia-cli pino-pretty pdf2json nuxt typescript typescript-language-server fuge gitlab-time-tracker javascript-typescript-langserver markdown-pdf
 
 printf "Setup config"
 cp ohmyzsh/.zshrc $HOME/.zshrc
