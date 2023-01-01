@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 printf "Installing oh my zsh"
-sudo pacman -S usbguard
+sudo pacman -S usbguard -y
 
 printf "Generating fresh usb policy to avoid lockout"
 sudo usbguard generate-policy | sudo tee /etc/usbguard/rules.conf > /dev/null
@@ -30,7 +30,7 @@ gsettings set org.gnome.desktop.privacy usb-protection true
 gsettings set org.gnome.desktop.privacy usb-protection-level always
 
 printf "Install gnome integration"
-sudo pacman -S python-{gobject,pyparsing}
+sudo pacman -S python-{gobject,pyparsing} -y
 pip install pygobject pyparsing
 git clone https://github.com/6E006B/usbguard-gnome.git
 python -m compileall usbguard-gnome
