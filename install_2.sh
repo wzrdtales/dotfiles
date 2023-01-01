@@ -13,7 +13,7 @@ curl -o- https://raw.githubusercontent.com/wzrdtales/nvm-ng/v0.40.0/install.sh |
 # Load nvm if it exists
 [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --fast-reuse
 
-nvm install 14
+nvm install 18
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 npm i -g pnpm prettier prettier-eslint-cli
