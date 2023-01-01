@@ -7,7 +7,7 @@ printf "Generating fresh usb policy to avoid lockout"
 sudo usbguard generate-policy | sudo tee /etc/usbguard/rules.conf > /dev/null
 
 printf "Configure policy kit"
-sudo cat << 'EOF' > /etc/polkit-1/rules.d/70-allow-usbguard.rules
+sudo cat << 'EOF' | sudo tee /etc/polkit-1/rules.d/70-allow-usbguard.rules > /dev/null
 // Allow users in wheel group to communicate with USBGuard
 polkit.addRule(function(action, subject) {
     if ((action.id == "org.usbguard.Policy1.listRules" ||
@@ -39,7 +39,7 @@ sudo cp /opt/usbguard-gnome/usbguard* /usr/share/applications/
 sudo cp /opt/usbguard-gnome/src/org.gnome.usbguard.gschema.xml /usr/share/glib-2.0/schemas
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 
-sudo cat << 'EOF' > /etc/xdg/autostart/usbguard-applet.desktop
+sudo cat << 'EOF' | sudo tee /etc/xdg/autostart/usbguard-applet.desktop > /dev/null
 #!/usr/bin/env xdg-open
 
 [Desktop Entry]
