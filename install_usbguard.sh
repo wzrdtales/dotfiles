@@ -39,7 +39,7 @@ sudo cp /opt/usbguard-gnome/usbguard* /usr/share/applications/
 sudo cp /opt/usbguard-gnome/src/org.gnome.usbguard.gschema.xml /usr/share/glib-2.0/schemas
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 
-sudo cat << 'EOF' > /etc/xdg/autostart/
+sudo cat << 'EOF' > /etc/xdg/autostart/usbguard-applet.desktop
 #!/usr/bin/env xdg-open
 
 [Desktop Entry]
