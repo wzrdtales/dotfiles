@@ -18,7 +18,7 @@ polkit.addRule(function(action, subject) {
          action.id == "org.usbguard1.getParameter" ||
          action.id == "org.usbguard1.setParameter") &&
         subject.active == true && subject.local == true &&
-        subject.isInGroup("wheel")) {
+        (subject.isInGroup("wheel") || subject.user == "gdm")) {
             return polkit.Result.YES;
     }
 });
@@ -38,8 +38,10 @@ sudo cp -r usbguard-gnome /opt
 sudo cp /opt/usbguard-gnome/usbguard* /usr/share/applications/
 sudo cp /opt/usbguard-gnome/src/org.gnome.usbguard.gschema.xml /usr/share/glib-2.0/schemas
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+sudo systemctl enable --now usbguard
+sudo systemctl enable --now usbguard-dbus
 
-sudo cat << 'EOF' | sudo tee /etc/xdg/autostart/usbguard-applet.desktop > /dev/null
+cat << 'EOF' | tee ${HOME}/.config/autostart/usbguard-applet.desktop > /dev/null
 #!/usr/bin/env xdg-open
 
 [Desktop Entry]
