@@ -1,10 +1,12 @@
---- evdev.lst	2019-03-19 17:06:02.113759987 +0100
-+++ /usr/share/X11/xkb/rules/evdev.lst	2019-03-19 16:55:50.653346837 +0100
-@@ -229,6 +229,7 @@
-   gn              French (Guinea)
-   ge              Georgian
-   de              German
-+  depro           Germanpro
-   gr              Greek
-   hu              Hungarian
-   is              Icelandic
+*** evdev.lst	2024-06-18 11:39:34.496255981 +0200
+--- /usr/share/X11/xkb/rules/evdev.lst	2024-06-18 11:38:18.935565504 +0200
+***************
+*** 227,232 ****
+--- 227,233 ----
+    tg              French (Togo)
+    ge              Georgian
+    de              German
++   depro           Germanpro
+    at              German (Austria)
+    ch              German (Switzerland)
+    gr              Greek
