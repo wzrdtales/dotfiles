@@ -24,7 +24,7 @@ cp ohmyzsh/.zshrc $HOME/.zshrc
 sed -i "s,/home/tobi,$HOME," $HOME/.zshrc
 mkdir $HOME/.config
 cp -R nvim $HOME/.config/
-ln -s $HOME/.config/init.vim $HOME/.nvimrc
+ln -s $HOME/.config/nvim/init.vim $HOME/.nvimrc
 
 wget https://github.com/clvv/fasd/tarball/1.0.1 -O- | tar xz
 cd clvv-fasd-*
